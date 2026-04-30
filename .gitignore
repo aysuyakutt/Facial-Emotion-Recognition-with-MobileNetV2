@@ -1,0 +1,27 @@
+local_archive/
+
+dataset/
+datasets/
+datasets_face/
+datasets_face_rgb/
+raw_datasets/
+FER-2013/
+KDEF_DATABASE/
+jaffe/
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.idea/
+
+*.h5
+*.tflite
+final_emotion_savedmodel/
+outputs/
+
+*.docx
+*.pdf
+proje maili.txt
+
+confusion_matrix_tta.png
+training_history.png
