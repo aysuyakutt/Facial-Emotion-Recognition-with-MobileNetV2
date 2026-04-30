@@ -73,6 +73,80 @@ The report also states that multiple datasets were used during experimentation a
 - JAFFE
 - KDEF
 
+## How the Dataset Was Built
+
+The final dataset was created by combining and standardizing multiple facial expression datasets instead of using a single ready-made training folder.
+
+Preparation workflow:
+
+1. Raw datasets such as **FER-2013**, **JAFFE**, and **KDEF** were collected.
+2. Emotion labels were mapped into a common 7-class taxonomy:
+   - angry
+   - disgust
+   - fear
+   - happy
+   - neutral
+   - sad
+   - surprise
+3. Different folder layouts and image formats were cleaned and standardized.
+4. The final data was reorganized into a Keras-friendly directory structure:
+
+```text
+dataset/
+  train/
+    angry/
+    disgust/
+    fear/
+    happy/
+    neutral/
+    sad/
+    surprise/
+  val/
+    angry/
+    disgust/
+    fear/
+    happy/
+    neutral/
+    sad/
+    surprise/
+  test/
+    angry/
+    disgust/
+    fear/
+    happy/
+    neutral/
+    sad/
+    surprise/
+```
+
+Final split sizes reported in the notebook:
+
+- Train: `25,173` images
+- Validation: `6,206` images
+- Test: `7,659` images
+
+The final training notebook directly uses:
+
+- `dataset/train`
+- `dataset/val`
+- `dataset/test`
+
+Class order used by the final model:
+
+- angry
+- disgust
+- fear
+- happy
+- neutral
+- sad
+- surprise
+
+Because the dataset is imbalanced, especially for the `disgust` class, the final training pipeline also uses:
+
+- balanced class weights
+- controlled oversampling
+- data augmentation
+
 ## Results
 
 Reported final test results:
@@ -242,6 +316,80 @@ Rapor, deney ve standardizasyon sürecinde birden fazla veri seti kullanıldığ
 - FER-2013
 - JAFFE
 - KDEF
+
+## Veri Seti Nasıl Oluşturuldu
+
+Nihai veri seti, tek bir hazır eğitim klasöründen alınmadı. Birden fazla yüz ifadesi veri seti birleştirilip standartlaştırılarak oluşturuldu.
+
+Hazırlama akışı:
+
+1. **FER-2013**, **JAFFE** ve **KDEF** gibi ham veri setleri toplandı.
+2. Duygu etiketleri ortak 7 sınıflı yapıya eşlendi:
+   - angry
+   - disgust
+   - fear
+   - happy
+   - neutral
+   - sad
+   - surprise
+3. Farklı klasör yapıları ve farklı görsel formatları temizlenip ortak hale getirildi.
+4. Son veri yapısı, Keras ile uyumlu olacak şekilde aşağıdaki düzene taşındı:
+
+```text
+dataset/
+  train/
+    angry/
+    disgust/
+    fear/
+    happy/
+    neutral/
+    sad/
+    surprise/
+  val/
+    angry/
+    disgust/
+    fear/
+    happy/
+    neutral/
+    sad/
+    surprise/
+  test/
+    angry/
+    disgust/
+    fear/
+    happy/
+    neutral/
+    sad/
+    surprise/
+```
+
+Notebook içinde raporlanan nihai bölünme boyutları:
+
+- Train: `25,173` görsel
+- Validation: `6,206` görsel
+- Test: `7,659` görsel
+
+Nihai eğitim notebook'u doğrudan şu klasörleri kullanır:
+
+- `dataset/train`
+- `dataset/val`
+- `dataset/test`
+
+Nihai modelin kullandığı sınıf sırası:
+
+- angry
+- disgust
+- fear
+- happy
+- neutral
+- sad
+- surprise
+
+Veri seti dengesiz olduğu için, özellikle `disgust` sınıfını desteklemek amacıyla eğitimde ayrıca şunlar kullanıldı:
+
+- dengeli class weight
+- kontrollü oversampling
+- data augmentation
 
 ## Sonuçlar
 
