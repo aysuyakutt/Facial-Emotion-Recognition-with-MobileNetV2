@@ -1,5 +1,7 @@
 # Facial Emotion Recognition with MobileNetV2
 
+![Facial Emotion Recognition Interface](screenshot in project/interface.png)
+
 English comes first. Turkish version is available below.
 
 ## Overview
