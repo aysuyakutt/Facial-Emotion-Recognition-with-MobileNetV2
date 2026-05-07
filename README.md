@@ -1,12 +1,7 @@
 # Facial Emotion Recognition with MobileNetV2
 
-<<<<<<< HEAD
-![Facial Emotion Recognition Interface](screenshot in project/interface.png)
+![Facial Emotion Recognition Interface](screenshot%20in%20project/interface.png)
 
-English comes first. Turkish version is available below.
-
-=======
->>>>>>> be90cbf1fdb1c16e4300f658662bcc6d9bae31d6
 ## Overview
 
 This project focuses on **facial emotion recognition (FER)** using deep learning.  
